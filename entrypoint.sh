@@ -34,4 +34,10 @@ if ! etcdctl --user "root:$ETCD_ROOT_PASSWORD" auth status 2>/dev/null | grep -q
   etcdctl auth enable
 fi
 
-wait "$pid"
+# Keep waiting after a TERM so the server finishes its shutdown before the container exits.
+status=0
+wait "$pid" || status=$?
+while kill -0 "$pid" 2>/dev/null; do
+  wait "$pid" || status=$?
+done
+exit "$status"
