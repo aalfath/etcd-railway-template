@@ -1,5 +1,7 @@
 # Deploy and Host etcd on Railway
 
+[![Deploy on Railway](https://railway.com/button.svg)](https://railway.com/new/template/etcd?utm_medium=integration&utm_source=button&utm_campaign=etcd)
+
 etcd is the strongly consistent, distributed key-value store behind Kubernetes. Applications use it for configuration, service discovery, leader election and distributed locks, reading and writing keys through a gRPC API with watches, leases and transactions. Client libraries exist for Go, Python, Java, Node.js, Rust and more.
 
 ## About Hosting etcd
